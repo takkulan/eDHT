@@ -1,11 +1,17 @@
 import requests, sys, json, re
+
+
+# Configure values below
 baseUrl='https://api.particle.io/v1/devices/'
 myAccessToken='key your access token here'
 myCoreId='key in your device core id here'
+
+
 token='access_token='+myAccessToken
 urlToEvents=baseUrl+'events?'+token
-# this api returns two lines first event source
-# second line event contents json
+# this api returns two lines:
+# 1. line: event source
+# 2. line: event contents json
 
 # ------ Subroutine for calling cloud function
 def gotoSafeMode():
